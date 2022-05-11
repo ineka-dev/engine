@@ -22,14 +22,35 @@
 <p>This project tries to make things its own way by proposing a <strong>graph based structure</strong> instead of a traditional ECS.</p>
 <p>I prefer to warn you that this project was <strong>made for personal use</strong> but nothing is stopping you from using it or contributing.</p>
 
-<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
-  <h2>Installation</h2>
+<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+  <h2>Getting started</h2>
 </a>
-<p>The installation is pretty simple, just install the package using a package manager:</p>
+
+<a href="#cli-installation" id="cli-installation" style="color: inherit; text-decoration: none;">
+  <h3>CLI installation</h3>
+</a>
+<p>The simplest way to create a game project for Ineka is by using:</p>
+<pre><code class="language-bash"><span class="hl-0">npx @ineka/create-game &lt;name&gt;</span>
+</code></pre>
+<p>If you have <strong>npm 6+</strong> you can also use:</p>
+<pre><code class="language-bash"><span class="hl-0">npm init @ineka/game &lt;name&gt;</span><br/><span class="hl-1"># Or</span><br/><span class="hl-0">npm create @ineka/game &lt;name&gt;</span>
+</code></pre>
+<p>You can find <a href="https://github.com/ineka-dev/create-game">the cli package sources here</a>.</p>
+
+<a href="#manual-installation" id="manual-installation" style="color: inherit; text-decoration: none;">
+  <h3>Manual installation</h3>
+</a>
+<p>You can also install the package using a package manager:</p>
 <pre><code class="language-bash"><span class="hl-0">npm install @ineka/engine</span>
 </code></pre>
 <p>Then use a bundler like <a href="https://webpack.js.org/">webpack</a>, <a href="https://rollupjs.org/">rollup</a> or <a href="https://parceljs.org/">parcel</a> to bundle your game.</p>
-<p>A template repository will be available in the future to quickly bootstrap games made with Ineka.</p>
+
+<a href="#packages" id="packages" style="color: inherit; text-decoration: none;">
+  <h2>Packages</h2>
+</a>
+<p>Ineka, by design, ships with a very minimal set of features. The goal is to offer an ecosystem of packages to customize the engine with <strong>features you want and need</strong> instead of imposing them.</p>
+<p>This concept aims to <strong>reduce bloat</strong> and offer <strong>a large panel of customization options</strong>.</p>
+<p><a href="https://github.com/ineka-dev/packages"><strong>Find more about available packages here</strong></a></p>
 
 <a href="#cicd-workflows" id="cicd-workflows" style="color: inherit; text-decoration: none;">
   <h2>CI/CD Workflows</h2>
