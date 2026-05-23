@@ -16,6 +16,7 @@ import { Time } from './core/Time'
 import { TreeNode } from './core/TreeNode'
 import { InnerNode } from './core/InnerNode'
 import { OuterNode } from './core/OuterNode'
+import { SystemNode } from './core/SystemNode'
 
 // Errors:
 import { EngineError } from './errors/EngineError'
@@ -31,6 +32,7 @@ export {
   TreeNode,
   InnerNode,
   OuterNode,
+  SystemNode,
 
   // Errors:
   EngineError,

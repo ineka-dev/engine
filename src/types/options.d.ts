@@ -39,13 +39,13 @@ export interface EngineOptions {
   hooks?: {
     /**
      * Called before the engine's step loop.
-     * @default async () => { }
+     * @default () => { }
      */
-    beforeStep: () => Promise<void>
+    beforeStep: () => void
     /**
      * Called after the engine's step loop.
-     * @default async () => { }
+     * @default () => { }
      */
-    afterStep: () => Promise<void>
+    afterStep: () => void
   }
 }

@@ -1,12 +1,16 @@
-import { nanoid } from 'nanoid/non-secure'
 import type { Engine } from './Engine'
+
+/**
+ * Global node ID counter.
+ */
+let nextNodeId = 0
 
 /**
  * Basic TreeNode interface for engine's graph.
  */
 export abstract class TreeNode {
   /**
-   * Node's ID, generate it with [nanoid](https://github.com/ai/nanoid) if applicable.
+   * Node's ID.
    */
   protected _id: string
 
@@ -51,7 +55,7 @@ export abstract class TreeNode {
     else {
       this._engine = parent
     }
-    this._id = nanoid(16)
+    this._id = (nextNodeId++).toString(36)
     this._isLoaded = false
   }
 

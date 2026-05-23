@@ -46,18 +46,20 @@ export class InnerNode extends TreeNode {
    * @sealed
    */
   public remove(node: TreeNode): TreeNode {
-    let removedNode
-    this._children = this._children.filter((n: TreeNode) => {
-      // Unloads and filters the given node out.
-      if (n.id === node.id) {
-        removedNode = n
-        n.unload()
-        return false
-      }
-      return true
-    })
-    if (!removedNode)
+    const index = this._children.findIndex(n => n.id === node.id)
+    if (index === -1) {
       throw new EngineError(this._engine, 'NODE:FAILURE', 'The node you tried to remove is not a child of this node.')
+    }
+
+    const removedNode = this._children[index]
+    removedNode.unload()
+
+    // Swap-and-pop for fast removal avoiding array reallocation
+    const last = this._children.pop()
+    if (last !== undefined && last !== removedNode) {
+      this._children[index] = last
+    }
+
     return removedNode
   }
 

@@ -12,7 +12,7 @@ function bundle(config: RollupOptions): RollupOptions {
   return {
     ...config,
     input: 'src/index.ts',
-    external: ['nanoid', 'nanoid/non-secure'],
+    external: [],
   }
 }
 
