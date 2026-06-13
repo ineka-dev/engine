@@ -1,0 +1,33 @@
+{
+  "name": "@ineka/keyboard",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Keyboard API integration for Ineka Engine",
+  "author": "Colin Espinas",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "typedoc": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "rolldown -c rolldown.config.ts -w",
+    "build": "rolldown -c rolldown.config.ts"
+  },
+  "peerDependencies": {
+    "@ineka/engine": "workspace:*"
+  },
+  "devDependencies": {
+    "rolldown": "latest",
+    "rolldown-plugin-dts": "latest",
+    "tslib": "^2.8.1",
+    "typescript": "~6.0.3"
+  }
+}

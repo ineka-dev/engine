@@ -19,7 +19,7 @@
 
 Ineka is a **small and customizable** game engine made as **a passion project** to learn more about game and web development.
 
-This project tries to make things its own way by proposing a **graph based structure** instead of a traditional ECS.
+This project uses a blazingly fast **Data-Oriented Graph** and **Trait Sparse Sets** instead of a traditional Object-Oriented ECS, while still providing a highly composable Developer Experience.
 
 I prefer to warn you that this project was **made for personal use** but nothing is stopping you from using it or contributing.
 

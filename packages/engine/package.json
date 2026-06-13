@@ -1,0 +1,47 @@
+{
+  "name": "@ineka/engine",
+  "type": "module",
+  "version": "2.1.2",
+  "description": "A small and customizable game engine",
+  "author": "Colin Espinas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ineka-dev/engine.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "typedoc": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "rolldown -c rolldown.config.ts -w",
+    "build": "rolldown -c rolldown.config.ts",
+    "lint": "eslint . --flag unstable_ts_config",
+    "lint:fix": "eslint . --fix --flag unstable_ts_config",
+    "release:publish": "changeset publish",
+    "release:version": "changeset version"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^9.0.0",
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.0",
+    "@types/node": "^25.9.1",
+    "eslint": "^10.4.0",
+    "rolldown": "latest",
+    "rolldown-plugin-dts": "latest",
+    "tslib": "^2.8.1",
+    "typescript": "~6.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "entryPoints": [
+    "packages/engine/src/index.ts",
+    "packages/pixi/src/index.ts",
+    "packages/howler/src/index.ts",
+    "packages/gamepad/src/index.ts"
+  ],
+  "out": "apps/docs/api",
+  "plugin": ["typedoc-plugin-markdown"],
+  "hideGenerator": true,
+  "readme": "none",
+  "entryFileName": "index.md",
+  "parametersFormat": "table",
+  "interfacePropertiesFormat": "table",
+  "classPropertiesFormat": "table",
+  "enumMembersFormat": "table",
+  "typeDeclarationFormat": "table",
+  "tableColumnSettings": {
+    "hideModifiers": true,
+    "hideSources": true,
+    "leftAlignHeaders": true
+  },
+  "hidePageHeader": true,
+  "compilerOptions": {
+    "skipLibCheck": true
+  }
+}

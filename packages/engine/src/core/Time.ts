@@ -16,10 +16,6 @@ export class Time {
    */
   private _last: number = performance.now()
   /**
-   * Slow motion scaling factor.
-   */
-  private _slow: number = 1
-  /**
    * Target framerate of the engine.
    */
   private _targetFramerate: number = 60
@@ -30,32 +26,39 @@ export class Time {
 
   /**
    * Get engine's delta time in seconds.
+   * This is the real time passed since the last variable-rate frame. Use this in `step` systems.
+   * 
+   * @example
+   * ```ts
+   * transform.data.x[id] += velocity.data.x[id] * engine.time.delta
+   * ```
    */
   public get delta(): number { return this._delta }
 
   /**
    * Get the current engine's time for a step in seconds (this is the ideal time of a frame).
+   * Use this in `fixed-step` systems for deterministic updates (like physics).
+   * 
+   * @example
+   * ```ts
+   * physics.velocity[id] += gravity * engine.time.timestep
+   * ```
    */
-  public get timestep(): number { return (1 / this._targetFramerate) * this._slow }
+  public get timestep(): number { return 1 / this._targetFramerate }
 
   /**
-   * Get current framerate in frames per second.
+   * Get the current actual framerate in frames per second.
    */
   public get framerate(): number { return this._fps }
 
   /**
-   * Get slow scaling factor.
+   * Get the target framerate used for fixed timestep calculations.
    */
-  public get slow(): number { return this._slow }
-  /**
-   * Set the slow scaling factor.
-   */
-  public set slow(value: number) {
-    this._slow = value
-  }
-
   public get targetFramerate(): number { return this._targetFramerate }
 
+  /**
+   * Set the target framerate used for fixed timestep calculations.
+   */
   public set targetFramerate(value: number) {
     this._targetFramerate = value
   }

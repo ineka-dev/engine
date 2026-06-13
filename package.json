@@ -1,48 +1,30 @@
 {
-  "name": "@ineka/engine",
-  "type": "module",
-  "version": "2.1.2",
-  "description": "A small and customizable game engine",
-  "author": "Colin Espinas",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ineka-dev/engine.git"
-  },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "name": "ineka-monorepo",
+  "private": true,
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "dev": "rollup -w --config rollup.config.ts --configPlugin typescript",
-    "build": "rollup --config rollup.config.ts --configPlugin typescript --environment NODE_ENV:production",
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint",
+    "lint:fix": "pnpm -r run lint:fix",
     "docs:generate": "typedoc",
-    "docs:serve": "serve docs",
-    "lint": "eslint . --flag unstable_ts_config",
-    "lint:fix": "eslint . --fix --flag unstable_ts_config",
+    "docs:dev": "pnpm --filter @ineka/docs run dev",
+    "docs:build": "pnpm --filter @ineka/docs run build",
+    "example:dev": "pnpm --filter @ineka/example run dev",
+    "example:build": "pnpm --filter @ineka/example run build",
     "release:publish": "changeset publish",
     "release:version": "changeset version"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@antfu/eslint-config": "^2.27.0",
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.7",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@types/node": "^22.4.2",
-    "esbuild": "^0.23.1",
-    "eslint": "^9.9.0",
-    "rollup": "^4.21.0",
-    "rollup-plugin-dts": "^6.1.1",
-    "rollup-plugin-esbuild": "^6.1.1",
-    "serve": "^14.2.3",
-    "tslib": "^2.6.3",
-    "typedoc": "^0.26.6",
-    "typescript": "~5.5.4"
+    "@antfu/eslint-config": "^9.0.0",
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.0",
+    "eslint": "^10.4.0",
+    "typedoc": "^0.28.19",
+    "typedoc-plugin-markdown": "^4.12.0",
+    "typescript": "~6.0.3"
   },
-  "publishConfig": {
-    "access": "public"
-  }
+  "dependencies": {},
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "packageManager": "pnpm@11.2.2"
 }
